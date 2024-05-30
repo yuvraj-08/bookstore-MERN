@@ -12,9 +12,20 @@ app.get("/",(request,response)=>{
     console.log(request);
     return response.status(234).send("Welcome to MERN");
 });
-
+//Middle ware for parsing request body
 app.use("/books", booksRoute);
 
+//Middleware for handling CORS Policy
+//Option 1: ALLOW all origins with default of cors(*)
+app.use(corse());
+// Option 2: Allow custom origins
+// app.use(
+//     corse({
+//         origin: 'http://localhost:3000',
+//         methods: ['GET','POST','PUT','DELETE'],
+//         allowedHeaders: ['Content-Type'],
+//     })
+// );
 mongoose
     .connect(mongoDBURL)
     .then(()=>{
