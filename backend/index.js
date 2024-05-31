@@ -6,6 +6,7 @@ import booksRoute from "./routes/booksRoute.js";
 
 const app = express();
 
+//Middleware for using JSON in express
 app.use(express.json());
 
 app.get("/",(request,response)=>{
