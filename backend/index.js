@@ -3,6 +3,7 @@ import {PORT, mongoDBURL} from "./config.js";
 import mongoose from "mongoose";
 import { Book } from "./models/bookModel.js";
 import booksRoute from "./routes/booksRoute.js";
+import cors from 'cors';
 
 const app = express();
 
@@ -13,20 +14,23 @@ app.get("/",(request,response)=>{
     console.log(request);
     return response.status(234).send("Welcome to MERN");
 });
-//Middle ware for parsing request body
-app.use("/books", booksRoute);
+
 
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
-app.use(corse());
+app.use(cors());
 // Option 2: Allow custom origins
 // app.use(
-//     corse({
-//         origin: 'http://localhost:3000',
+//     cors({
+//         origin: 'https://5173-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/',
 //         methods: ['GET','POST','PUT','DELETE'],
 //         allowedHeaders: ['Content-Type'],
 //     })
 // );
+//Middle ware for parsing request body
+app.use("/books", booksRoute);
+
+
 mongoose
     .connect(mongoDBURL)
     .then(()=>{
