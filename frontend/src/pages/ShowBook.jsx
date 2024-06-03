@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton.jsx';
 import Spinner from '../components/Spinner.jsx';
 
 const ShowBook = () => {
-  const [book, setBook] = useState([]);
+  const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
@@ -21,7 +21,7 @@ const ShowBook = () => {
         console.log(error);
         setLoading(false);
       });
-  },[]);
+  },[id]);
   return (
     <div className='p-4'>
       <BackButton />
@@ -60,4 +60,4 @@ const ShowBook = () => {
   )
 }
 
-export default ShowBook
+export default ShowBook;
