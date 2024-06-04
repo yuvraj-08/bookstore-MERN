@@ -14,7 +14,7 @@ const ShowBook = () => {
     axios
       .get(`https://3000-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/books/${id}`)
       .then((response)=>{
-        setBook(response.data);
+        setBook(response.data.book);
         setLoading(false);
       })
       .catch((error) => {

@@ -18,9 +18,9 @@ const EditBook = () => {
     setLoading(true);
     axios.get(`https://3000-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/books/${id}`)
     .then((response) => {
-      setAuthor(response.data.author);
-      setPublishYear(response.data.title);
-      setTitle(response.data.title);
+      setAuthor(response.data.book.author);
+      setPublishYear(response.data.book.publishYear);
+      setTitle(response.data.book.title);
       setLoading(false);
     })
     .catch((error) => {
