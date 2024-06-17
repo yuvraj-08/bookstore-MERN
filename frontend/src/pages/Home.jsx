@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(()=>{
     setLoading(true);
     axios
-      .get("https://3000-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/books")
+      .get("https://book-store-five-delta.vercel.app/books")
       .then((response)=>{
         setBooks(response.data.data);
         setLoading(false);

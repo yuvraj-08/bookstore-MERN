@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(()=>{
     setLoading(true);
-    axios.get(`https://3000-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/books/${id}`)
+    axios.get(`https://book-store-five-delta.vercel.app/books/${id}`)
     .then((response) => {
       setAuthor(response.data.book.author);
       setPublishYear(response.data.book.publishYear);
@@ -39,7 +39,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`https://3000-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/books/${id}`, data)
+      .put(`https://book-store-five-delta.vercel.app/books/${id}`, data)
       .then(()=>{
         setLoading(false);
         enqueueSnackbar('Book Edited Successfully', {variant: 'success'});
