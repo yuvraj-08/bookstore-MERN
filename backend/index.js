@@ -22,7 +22,7 @@ app.get("/",(request,response)=>{
 // Option 2: Allow custom origins
 app.use(
     cors({
-        origin: 'https://bookstore-mern-eight.vercel.app/',
+        origin: 'https://bookstore-mern-eight.vercel.app',
         methods: ['GET','POST','PUT','DELETE'],
         credentials: true
     })
