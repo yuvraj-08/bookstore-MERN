@@ -5,9 +5,10 @@ import CreateBooks from './pages/CreateBooks';
 import ShowBook from './pages/ShowBook';
 import EditBook from './pages/EditBook';
 import DeleteBook from './pages/DeleteBook';
-
+import axios from 'axios';
 
 const App =()=>{
+  axios.defaults.withCredentials = true;
   return(
    <Routes>
     <Route path='/' element={<Home />}></Route>
