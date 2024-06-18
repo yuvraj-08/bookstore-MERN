@@ -10,12 +10,6 @@ const app = express();
 //Middleware for using JSON in express
 app.use(express.json());
 
-app.get("/",(request,response)=>{
-    console.log(request);
-    return response.status(234).send("Welcome to MERN");
-});
-
-
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
 // app.use(cors());
@@ -27,6 +21,14 @@ app.use(
         credentials: true
     })
 );
+
+app.get("/",(request,response)=>{
+    console.log(request);
+    return response.status(234).send("Welcome to MERN");
+});
+
+
+
 //Middle ware for parsing request body
 app.use("/books", booksRoute);
 
