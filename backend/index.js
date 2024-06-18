@@ -18,15 +18,15 @@ app.get("/",(request,response)=>{
 
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
-app.use(cors());
+// app.use(cors());
 // Option 2: Allow custom origins
-// app.use(
-//     cors({
-//         origin: 'https://5173-yuvraj08-bookstoremern-0asjmiqry75.ws-us114.gitpod.io/',
-//         methods: ['GET','POST','PUT','DELETE'],
-//         allowedHeaders: ['Content-Type'],
-//     })
-// );
+app.use(
+    cors({
+        origin: 'https://bookstore-mern-eight.vercel.app/',
+        methods: ['GET','POST','PUT','DELETE'],
+        credentials: true
+    })
+);
 //Middle ware for parsing request body
 app.use("/books", booksRoute);
 
