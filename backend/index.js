@@ -12,7 +12,7 @@ app.use(express.json());
 
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
-app.use(cors());
+// app.use(cors());
 // Option 2: Allow custom origins
 // app.use(
 //     cors({
@@ -28,6 +28,10 @@ app.use(cors());
 //   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 //   next();
 // });
+
+app.use(cors({
+    origin: 'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io'
+}));
 
 app.get("/",(request,response)=>{
     console.log(request);
