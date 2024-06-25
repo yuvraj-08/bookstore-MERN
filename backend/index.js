@@ -10,6 +10,13 @@ const app = express();
 //Middleware for using JSON in express
 app.use(express.json());
 
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
+
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
 // app.use(cors());
@@ -29,11 +36,11 @@ app.use(express.json());
 //   next();
 // });
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/'); // Replace with your frontend's domain
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/'); // Replace with your frontend's domain
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+//   });
 
 app.get("/",(request,response)=>{
     console.log(request);
