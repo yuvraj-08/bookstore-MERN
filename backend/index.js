@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
