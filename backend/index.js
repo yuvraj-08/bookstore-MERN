@@ -12,7 +12,7 @@ app.use(express.json());
 
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
-// app.use(cors());
+app.use(cors());
 // Option 2: Allow custom origins
 // app.use(
 //     cors({
@@ -22,12 +22,12 @@ app.use(express.json());
 //     })
 // );
 // Add CORS headers
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://bookstore-mern-eight.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'https://bookstore-mern-eight.vercel.app');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   next();
+// });
 
 app.get("/",(request,response)=>{
     console.log(request);
