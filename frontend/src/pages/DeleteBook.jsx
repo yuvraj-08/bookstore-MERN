@@ -13,7 +13,7 @@ const DeleteBook = () => {
 
   const handleDeleteBook = () => {
     setLoading(true);
-    axios.delete(`https://book-store-five-delta.vercel.app/books/${id}`)
+    axios.delete(`https://3000-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/books/${id}`)
     .then(()=>{
       setLoading(false);
       enqueueSnackbar('Book Deleted Successfully', {variant: 'success'});
