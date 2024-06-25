@@ -29,9 +29,11 @@ app.use(express.json());
 //   next();
 // });
 
-app.use(cors({
-    origin: 'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io'
-}));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/'); // Replace with your frontend's domain
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 app.get("/",(request,response)=>{
     console.log(request);
