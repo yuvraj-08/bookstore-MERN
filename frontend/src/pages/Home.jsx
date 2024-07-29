@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(()=>{
     setLoading(true);
     axios
-      .get("https://3000-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/books")
+      .get("https://3000-yuvraj08-bookstoremern-c4enzoxqdc3.ws-us115.gitpod.io/books")
       .then((response)=>{
         setBooks(response.data.data);
         setLoading(false);

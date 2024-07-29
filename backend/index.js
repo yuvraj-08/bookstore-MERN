@@ -10,16 +10,16 @@ const app = express();
 //Middleware for using JSON in express
 app.use(express.json());
 
-const corsOptions ={
-    origin:'https://5173-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+// const corsOptions ={
+//     origin:'https://5173-yuvraj08-bookstoremern-c4enzoxqdc3.ws-us115.gitpod.io', 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 
 //Middleware for handling CORS Policy
 //Option 1: ALLOW all origins with default of cors(*)
-// app.use(cors());
+app.use(cors());
 // Option 2: Allow custom origins
 // app.use(
 //     cors({

@@ -12,7 +12,7 @@ const ShowBook = () => {
   useEffect(()=>{
     setLoading(true);
     axios
-      .get(`https://3000-yuvraj08-bookstoremern-sjc3k4uq8kx.ws-us114.gitpod.io/books/${id}`)
+      .get(`https://3000-yuvraj08-bookstoremern-c4enzoxqdc3.ws-us115.gitpod.io/books/${id}`)
       .then((response)=>{
         setBook(response.data.book);
         setLoading(false);
